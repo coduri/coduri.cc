@@ -2,3 +2,5 @@
 .idea/coduri.cc.iml
 .idea/modules.xml
 .idea/vcs.xml
+.DS_Store
+.idea/website.iml

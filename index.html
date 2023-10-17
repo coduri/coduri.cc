@@ -1,59 +1,163 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#00BCD4">
+    <head>
+        <meta charset="utf-8">
+        <title>Christian Coduri</title>
 
-    <title>Christian Coduri</title>
+        <link rel="stylesheet" href="https://academicpages.github.io/assets/css/main.css">
+        <link rel="icon" href="files/logo.png">
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
+    </head>
 
-    <link rel="icon" href="https://avatars.githubusercontent.com/u/62038607">
-    <link rel="stylesheet" href="style.css">
+    <body>
+        <div class="masthead">
+            <div class="masthead__inner-wrap">
+                <div class="masthead__menu">
+                    <nav id="site-nav" class="greedy-nav">
+                        <button>
+                            <div class="navicon"></div>
+                        </button>
+                        <ul class="visible-links">
+                            <li class="masthead__menu-item masthead__menu-item--lg">
+                                Christian Coduri
+                            </li>
+                            <li class="masthead__menu-item">
+                                <a href="">Thesis & Research</a>
+                            </li>
+                            <li class="masthead__menu-item">
+                                <a href="CV.html">CV</a>
+                            </li>
+                        </ul>
+                        <ul class="hidden-links hidden"></ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-</head>
 
-<body>
-<img src="https://avatars.githubusercontent.com/u/62038607" width="460" height="460" alt="Christian Coduri" draggable="false">
 
-<header>
-    <p>Ciao, sono</p>
-    <h1>Christian Coduri</h1>
-</header>
+        <div id="main" role="main">
+            <div class="sidebar sticky">
+                <div>
+                    <div class="author__avatar">
+                        <img src="https://avatars.githubusercontent.com/u/62038607" class="author__avatar">
+                    </div>
+                    <div class="author__content">
+                        <h3 class="author__name">Christian Coduri</h3>
+                        <p class="author__bio">CyberSec student | Steganography enthusiast</p>
+                    </div>
+                    <div class="author__urls-wrapper">
+                        <button class="btn btn--inverse">Follow</button>
+                        <ul class="author__urls social-icons">
+                            <li>
+                                <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i>
+                                Turin, Italy
+                            </li>
+                            <li>
+                                <a href="https://github.com/coduri" target="_blank">
+                                    <i class="fab fa-fw fa-github" aria-hidden="true"></i>
+                                    Github
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/coduric/" target="_blank">
+                                    <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i>
+                                    Linkedin
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com/c/GettheCookie" target="_blank">
+                                    <i class="fab fa-fw fa-youtube" aria-hidden="true"></i>
+                                    Youtube
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/kodugram" target="_blank">
+                                    <i class="fab fa-fw fa-instagram" aria-hidden="true" style="color: #e99116;"></i>
+                                    Instagram
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-<nav>
-    <ul>
-        <li id="github">
-            <a href="https://www.github.com/coduri" target="_blank">
-                <i class="fab fa-github"></i>
-                GitHub
-            </a>
-        </li>
-        <li id="linkedin">
-            <a href="https://www.linkedin.com/in/coduric/" target="_blank">
-                <i class="fab fa-linkedin"></i>
-                LinkedIn
-            </a>
-        </li>
-    </ul>
 
-    <ul class="ul-next">
-        <li id="instagram">
-            <a href="https://www.instagram.com/kodugram" target="_blank">
-                <i class="fab fa-instagram"></i>
-                Instagram
-            </a>
-        </li>
-        <li id="youtube">
-            <a href="https://www.youtube.com/c/GettheCookie" target="_blank">
-                <i class="fab fa-youtube"></i>
-                Youtube
-            </a>
-        </li>
-    </ul>
-</nav>
-</body>
+
+            <article class="page">
+                <div class="page__inner-wrap">
+                    <header>
+                        <h1 class="page__title">Encrypted DICOM File Sharing</h1>
+                    </header>
+                    <section class="page__content">
+                        <p>In the realm of medical data security, the confidentiality and integrity of diagnostic exam results are paramount. However, the use of DICOM files, which are not subject to encryption requirements, can pose significant security challenges. These files rely heavily on the security measures implemented within the healthcare institution's networks and databases. Unfortunately, these measures often prove inadequate in protecting against potential unauthorized access and malicious data injection or tampering.</p>
+                        <p><strong>Objective:</strong> The goal of this project is to create a tool that enables the secure sharing and storage of diagnostic exam results, ensuring the confidentiality of the information while safeguarding patient privacy. This tool will operate directly on DICOM files, utilizing steganography and visual cryptography to protect and preserve the security of metadata and pixel data.</p>
+                        <p><strong>Architecture:</strong> The proposed secure architecture involves splitting diagnostic reports into two distinct parts: one stored in the facility's archive and the other delivered directly to the patient.
+                            Access to the complete report requires the approval of the patient, represented by the obtainment of their share of the report.
+
+                        </p>
+
+                        <a href="files/research/first_thesis.pdf" target="_blank">Click here to open the project details (PDF)</a>
+                    </section>
+                </div>
+            </article>
+        </div>
+
+
+
+
+
+
+        <div class="page__footer">
+            <footer>
+                <!-- start custom footer snippets -->
+                <a href="/sitemap/">Sitemap</a>
+                <!-- end custom footer snippets -->
+                <div class="page__footer-follow">
+                    <ul class="social-icons">
+                        <li>
+                            <strong>Follow:</strong>
+                        </li>
+                        <li>
+                            <a href="https://github.com/coduri">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                                GitHub
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://academicpages.github.io/feed.xml">
+                                <i class="fa fa-fw fa-rss-square" aria-hidden="true"></i>
+                                Feed
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="page__footer-copyright">
+                    &copy;2023 Christian Coduri. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a>
+                    &amp;<a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>
+                    , a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>
+                    .
+                </div>
+            </footer>
+        </div>
+        <script src="https://academicpages.github.io/assets/js/main.min.js"></script>
+        <script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function() {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }
+                ,
+                i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            }
+            )(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+            ga('create', '', 'auto');
+            ga('send', 'pageview');
+        </script>
+    </body>
 </html>
