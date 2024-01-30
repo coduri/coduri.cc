@@ -1,163 +1,147 @@
-<!doctype html>
-<html lang="it">
+<!DOCTYPE html>
+<html lang="en">
     <head>
-        <meta charset="utf-8">
+        <meta charset="utf-8" />
         <title>Christian Coduri</title>
+        <link rel="stylesheet" href="css/styles.css" />
+        <link rel="icon" type="image/x-icon" href="files/img/icon.png" />
 
-        <link rel="stylesheet" href="https://academicpages.github.io/assets/css/main.css">
-        <link rel="icon" href="files/logo.png">
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Christian Coduri's personal website with details on thesis, projects, researches, resume, and contact information." />
+        <meta name="author" content="Christian Coduri" />
+
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
     </head>
 
-    <body>
-        <div class="masthead">
-            <div class="masthead__inner-wrap">
-                <div class="masthead__menu">
-                    <nav id="site-nav" class="greedy-nav">
-                        <button>
-                            <div class="navicon"></div>
-                        </button>
-                        <ul class="visible-links">
-                            <li class="masthead__menu-item masthead__menu-item--lg">
-                                Christian Coduri
-                            </li>
-                            <li class="masthead__menu-item">
-                                <a href="">Thesis & Research</a>
-                            </li>
-                            <li class="masthead__menu-item">
-                                <a href="CV.html">CV</a>
-                            </li>
-                        </ul>
-                        <ul class="hidden-links hidden"></ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
 
-
-
-        <div id="main" role="main">
-            <div class="sidebar sticky">
-                <div>
-                    <div class="author__avatar">
-                        <img src="https://avatars.githubusercontent.com/u/62038607" class="author__avatar">
-                    </div>
-                    <div class="author__content">
-                        <h3 class="author__name">Christian Coduri</h3>
-                        <p class="author__bio">CyberSec student | Steganography enthusiast</p>
-                    </div>
-                    <div class="author__urls-wrapper">
-                        <button class="btn btn--inverse">Follow</button>
-                        <ul class="author__urls social-icons">
-                            <li>
-                                <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i>
-                                Turin, Italy
-                            </li>
-                            <li>
-                                <a href="https://github.com/coduri" target="_blank">
-                                    <i class="fab fa-fw fa-github" aria-hidden="true"></i>
-                                    Github
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.linkedin.com/in/coduric/" target="_blank">
-                                    <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i>
-                                    Linkedin
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.youtube.com/c/GettheCookie" target="_blank">
-                                    <i class="fab fa-fw fa-youtube" aria-hidden="true"></i>
-                                    Youtube
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.instagram.com/kodugram" target="_blank">
-                                    <i class="fab fa-fw fa-instagram" aria-hidden="true" style="color: #e99116;"></i>
-                                    Instagram
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <article class="page">
-                <div class="page__inner-wrap">
-                    <header>
-                        <h1 class="page__title">Encrypted DICOM File Sharing</h1>
-                    </header>
-                    <section class="page__content">
-                        <p>In the realm of medical data security, the confidentiality and integrity of diagnostic exam results are paramount. However, the use of DICOM files, which are not subject to encryption requirements, can pose significant security challenges. These files rely heavily on the security measures implemented within the healthcare institution's networks and databases. Unfortunately, these measures often prove inadequate in protecting against potential unauthorized access and malicious data injection or tampering.</p>
-                        <p><strong>Objective:</strong> The goal of this project is to create a tool that enables the secure sharing and storage of diagnostic exam results, ensuring the confidentiality of the information while safeguarding patient privacy. This tool will operate directly on DICOM files, utilizing steganography and visual cryptography to protect and preserve the security of metadata and pixel data.</p>
-                        <p><strong>Architecture:</strong> The proposed secure architecture involves splitting diagnostic reports into two distinct parts: one stored in the facility's archive and the other delivered directly to the patient.
-                            Access to the complete report requires the approval of the patient, represented by the obtainment of their share of the report.
-
-                        </p>
-
-                        <a href="files/research/first_thesis.pdf" target="_blank">Click here to open the project details (PDF)</a>
-                    </section>
-                </div>
-            </article>
-        </div>
-
-
-
-
-
-
-        <div class="page__footer">
-            <footer>
-                <!-- start custom footer snippets -->
-                <a href="/sitemap/">Sitemap</a>
-                <!-- end custom footer snippets -->
-                <div class="page__footer-follow">
-                    <ul class="social-icons">
-                        <li>
-                            <strong>Follow:</strong>
-                        </li>
-                        <li>
-                            <a href="https://github.com/coduri">
-                                <i class="fab fa-github" aria-hidden="true"></i>
-                                GitHub
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://academicpages.github.io/feed.xml">
-                                <i class="fa fa-fw fa-rss-square" aria-hidden="true"></i>
-                                Feed
-                            </a>
-                        </li>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="#page-top">Christian Coduri</a>
+                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#researches">Researches</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
                     </ul>
                 </div>
-                <div class="page__footer-copyright">
-                    &copy;2023 Christian Coduri. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a>
-                    &amp;<a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>
-                    , a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>
-                    .
+            </div>
+        </nav>
+
+
+        <!-- Masthead-->
+        <header class="masthead bg-primary text-white text-center">
+            <div class="container d-flex align-items-center flex-column">
+                <img class="masthead-avatar mb-3" src="files/img/me.png" alt="It's me :)" draggable="false"/>
+                <h1 class="masthead-heading mb-0">Cybesecurity Student</h1>
+
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
                 </div>
-            </footer>
+
+                <p class="masthead-subheading font-weight-light mb-0">Cryptography Expert  |  Steganography Enthusiast</p>
+            </div>
+        </header>
+
+
+        <!-- Researches Section-->
+        <section class="page-section mb-0" id="researches">
+            <div class="container">
+                <h2 class="page-section-heading text-center text-secondary mb-0">Researches</h2>
+                <div class="divider-custom divider-secondary">
+                    <div class="divider-custom-line"></div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <img src="files/research/bachelor/dicom_example.png" class="card-img-top" alt="DICOM Image Example" draggable="false" />
+
+                            <div class="card-body">
+                                <h5 class="card-title text-center py-2">Advanced Techniques of Visual Cryptography and Steganography for Sharing of Medical Images</h5>
+                                <p class="fs-6 text-justify">
+                                    In the realm of medical data security, the confidentiality and integrity of diagnostic exam results are paramount. However, the use of DICOM files, which are not subject to encryption requirements, can pose significant security challenges. These files rely heavily on the security measures implemented within the healthcare institution's networks and databases. Unfortunately, these measures often prove inadequate in protecting against potential unauthorized access and malicious data injection or tampering.
+                                </p>
+                                <p class="fs-6 text-justify"><b>Objective:</b>
+                                    The goal of this project is to create a tool that enables the secure sharing and storage of diagnostic exam results, ensuring the confidentiality of the information while safeguarding patient privacy. This tool will operate directly on DICOM files, utilizing steganography and visual cryptography to protect and preserve the security of metadata and pixel data.
+                                </p>
+                                <p class="fs-6 text-justify"><b>Architecture:</b>
+                                    The proposed secure architecture involves splitting diagnostic reports into two distinct parts: one stored in the facility's archive and the other delivered directly to the patient. Access to the complete report requires the approval of the patient, represented by the obtainment of their share of the report.
+                                </p>
+                                <a href="files/research/bachelor/thesis.pdf" target="_blank" class="btn btn-secondary d-flex justify-content-center"> Click to read more (<i>in italian</i>) </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- div container -->
+        </section>
+
+
+        <!-- Resume Section-->
+        <section class="page-section bg-primary text-white mb-0" id="about">
+            <div class="container">
+                <h2 class="page-section-heading text-center">About Me</h2>
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 text-center">
+                        <img src="files/img/showtime.gif" class="img-fluid" alt="Showtime GIF" draggable="false">
+                    </div>
+                </div>
+
+                <div class="row justify-content-center mt-4">
+                    <div class="col-lg-6 text-center">
+                        <a class="btn btn-lg btn-outline-light" href="files/coduri_resume.pdf" target="_blank">
+                            <i class="far fa-file-pdf me-2"></i>
+                            View my CV
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Footer-->
+        <footer class="footer text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">Location</h4>
+                        <p class="lead mb-0">
+                            Turin, Italy
+                        </p>
+                    </div>
+
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">Around the Web</h4>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/coduric/" target="_blank"><i class="fab fa-fw fa-linkedin-in"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://github.com/coduri" target="_blank"><i class="fab fa-fw fa-github"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.youtube.com/c/GettheCookie" target="_blank"><i class="fab fa-fw fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.instagram.com/kodugram" target="_blank"><i class="fab fa-fw fa-instagram"></i></a>
+                    </div>
+
+                    <!--div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4"></h4>
+                        <div class="text-center mt-4"></div>
+                    </div-->
+                </div>
+            </div>
+        </footer>
+
+        <div class="copyright py-4 text-center text-white">
+            <div class="container"><small>Copyright &copy; Christian Coduri 2024</small></div>
         </div>
-        <script src="https://academicpages.github.io/assets/js/main.min.js"></script>
-        <script>
-            (function(i, s, o, g, r, a, m) {
-                i['GoogleAnalyticsObject'] = r;
-                i[r] = i[r] || function() {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }
-                ,
-                i[r].l = 1 * new Date();
-                a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0];
-                a.async = 1;
-                a.src = g;
-                m.parentNode.insertBefore(a, m)
-            }
-            )(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-            ga('create', '', 'auto');
-            ga('send', 'pageview');
-        </script>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/scripts.js"></script>
     </body>
 </html>
