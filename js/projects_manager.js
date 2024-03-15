@@ -13,7 +13,7 @@ const projects = [
         title: 'DDoS Attacks Detection and Characterization',
         description: 'Analyzing a dataset for benign and DDoS attacks, involving data exploration, supervised and unsuper- vised learning, and cluster explainability analysis.',
         url_report: 'projects/DDoS_Attacks_Detection_and_Characterization.pdf',
-        url_code: 'https://github.com/coduri/DDoS_Detection',
+        url_code: 'https://github.com/coduri/ML_DDoS_Detection',
         tags: ['machine-learning']
     },
 ]
