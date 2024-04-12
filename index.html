@@ -117,13 +117,13 @@
 
                 <div class="row justify-content-center">
                     <div class="col-lg-6 text-center">
-                        <img src="img/showtime.gif" class="img-fluid" alt="Showtime GIF" draggable="false">
+                        <img id="resumeImage" src="img/showtime.gif" class="img-fluid" alt="Showtime GIF" draggable="false">
                     </div>
                 </div>
 
                 <div class="row justify-content-center mt-4">
                     <div class="col-lg-6 text-center">
-                        <a class="btn btn-lg btn-outline-light" href="resume.pdf" target="_blank">
+                        <a id="resumeButton" class="btn btn-lg btn-outline-light" href="resume.pdf" target="_blank">
                             <i class="far fa-file-pdf me-2"></i>
                             View my CV
                         </a>
@@ -174,5 +174,15 @@
         <!-- Component Scripts -->
         <script src="js/navbar_manager.js"></script>
         <script src="js/projects_manager.js"></script>
+
+        <script>
+            console.log("🔒 Heads up! Attention all code enthusiasts and potential copycats: While you're welcome to peek under the hood, remember, the full source code is available at https://github.com/coduri/coduri.cc. Happy coding!");
+
+            // JavaScript code to change the image source when the button is clicked
+            document.getElementById('resumeButton').addEventListener('click', function() {
+                document.getElementById('resumeImage').src = 'img/over9000.gif';
+            });
+
+        </script>
     </body>
 </html>
