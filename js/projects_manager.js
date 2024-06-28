@@ -7,21 +7,29 @@ const projects = [
         description: 'Explored the complexities of embedded systems and developed a FreeRTOS Lottery Scheduler for Arm Cortex-M3 on QEMU, enhancing scheduling capabilities beyond default implementations.',
         url_report: 'projects/FreeRTOS_Lottery_Scheduling.pdf',
         url_code: 'https://github.com/coduri/FreeRTOS_LotteryScheduling',
-        tags: ['embedded-system']
+        tags: ['C', 'embedded-system']
     },
     {
         title: 'DDoS Attacks Detection and Characterization',
         description: 'Analyzing a dataset for benign and DDoS attacks, involving data exploration, supervised and unsuper- vised learning, and cluster explainability analysis.',
         url_report: 'projects/DDoS_Attacks_Detection_and_Characterization.pdf',
         url_code: 'https://github.com/coduri/ML_DDoS_Detection',
-        tags: ['machine-learning']
+        tags: ['Python', 'machine-learning']
+    },
+    {
+        title: 'GNSS Signals Analysis and Spoofing Experiments',
+        "description": "Examination of two datasets to understand GNSS signal behavior, identify interference issues, and explore potential vulnerabilities such as spoofed positions and signal delay attacks.",
+        url_report: 'projects/GNSS_Spoofing.pdf',
+        url_code: null,
+        tags: ['MATLAB', 'wireless-security']
     },
 ]
 
 const filterButtons = [
     {label: 'All', filter: 'all', class: 'btn-secondary'},
     {label: 'Machine Learning', filter: 'machine-learning', class: 'btn-primary'},
-    {label: 'Embedded System', filter: 'embedded-system', class: 'btn-primary'}
+    {label: 'Embedded System', filter: 'embedded-system', class: 'btn-primary'},
+    {label: 'Wireless Security', filter: 'wireless-security', class: 'btn-primary'}
 ]
 
 
@@ -42,7 +50,7 @@ $(document).ready(function() {
             tagsHTML += '<span class="badge badge-pill bg-secondary">' + tag + '</span> '
         })
 
-        const cardHTML = '<div class="col-lg-4 col-md-6 mb-4 project-card ' + project.tags.join(' ') + '">' +
+        let cardHTML = '<div class="col-lg-4 col-md-6 mb-4 project-card ' + project.tags.join(' ') + '">' +
             '<div class="card h-100">' +
             '<div class="card-body d-flex flex-column">' +                  // Align elements vertically
             '<h5 class="card-title py-2">' + project.title + '</h5>' +
@@ -50,15 +58,17 @@ $(document).ready(function() {
             '<div class="flex-grow-1"></div>' +                             // Push to the bottom
 
             '<div class="row"><div class="col-auto">' +
-            '<a href="' + project.url_report + '" target="_blank" class="btn btn-secondary btn-sm btn-block">Read the report</a>' +
-            ' <a href="' + project.url_code + '" target="_blank" class="btn btn-secondary btn-sm btn-block">View the code</a>' +
-            '</div></div><hr>' +
+            '<a href="' + project.url_report + '" target="_blank" class="btn btn-secondary btn-sm btn-block">Read the report</a>'
 
-            '<div class="tags mt-auto">' + tagsHTML + '</div>' +
+        if (project.url_code !=null)
+            cardHTML +=' <a href="' + project.url_code + '" target="_blank" class="btn btn-secondary btn-sm btn-block">View the code</a>'
 
-            '</div>' +
-            '</div>' +
-            '</div>'
+        cardHTML += '</div></div><hr>' +
+                    '<div class="tags mt-auto">' + tagsHTML + '</div>' +
+
+                    '</div>' +
+                    '</div>' +
+                    '</div>'
 
         $('#project-cards').append(cardHTML)
     })
