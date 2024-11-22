@@ -38,14 +38,16 @@ $(document).ready(function() {
 
     // Add Filter Buttons to the DOM
     const filterButtonContainer = $('.filter-buttons')
+
     filterButtons.forEach(function(button) {
-        const buttonHTML = '<button class="btn btn-sm filter-button ' + button.class + '" data-filter="' + button.filter + '">' + button.label + '</button> '
+        const buttonHTML = '<button class="btn btn-sm justify-content-center mt-2 filter-button ' + button.class + '" data-filter="' + button.filter + '">' + button.label + '</button> '
         filterButtonContainer.append(buttonHTML)
     })
 
     // Add Projects Cards to the DOM
     projects.forEach(function(project) {
         let tagsHTML = ''
+
         project.tags.forEach(function(tag) {
             tagsHTML += '<span class="badge badge-pill bg-secondary">' + tag + '</span> '
         })
@@ -102,7 +104,6 @@ $(document).ready(function() {
 
         }
     })
-
 })
 
 // Adjust the height of all project cards to match the height of the tallest card
