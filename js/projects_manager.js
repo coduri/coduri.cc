@@ -60,10 +60,10 @@ $(document).ready(function() {
             '<div class="flex-grow-1"></div>' +                             // Push to the bottom
 
             '<div class="row"><div class="col-auto">' +
-            '<a href="' + project.url_report + '" target="_blank" class="btn btn-secondary btn-sm btn-block">Read the report</a>'
+            '<a href="' + project.url_report + '" target="_blank" class="btn btn-secondary btn-sm btn-block mt-2">Read the report</a>'
 
         if (project.url_code !=null)
-            cardHTML +=' <a href="' + project.url_code + '" target="_blank" class="btn btn-secondary btn-sm btn-block">View the code</a>'
+            cardHTML +=' <a href="' + project.url_code + '" target="_blank" class="btn btn-secondary btn-sm btn-block mt-2">View the code</a>'
 
         cardHTML += '</div></div><hr>' +
                     '<div class="tags mt-auto">' + tagsHTML + '</div>' +

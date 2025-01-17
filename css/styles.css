@@ -599,8 +599,20 @@ progress {
 }
 
 .img-fluid {
-  max-width: 100%;
+  width: 100%;
+  max-width: 498px;
   height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+#resumeButton {
+  width: 100%;
+  max-width: 498px;
+  display: flex;
+  justify-content: center;
+  margin: 20px auto 0;
+  align-items: center;
 }
 
 .img-thumbnail {
@@ -1400,6 +1412,7 @@ progress {
     --bs-gutter-y: 3rem;
   }
 }
+
 @media (min-width: 1200px) {
   .col-xl {
     flex: 1 0 0%;
@@ -8099,9 +8112,9 @@ textarea.form-control-lg {
   color: rgba(0, 0, 0, 0.5) !important;
 }
 
-.text-white-50 {
+.text-white-70 {
   --bs-text-opacity: 1;
-  color: rgba(255, 255, 255, 0.5) !important;
+  color: rgba(255, 255, 255, 0.7) !important;
 }
 
 .text-reset {
