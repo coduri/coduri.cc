@@ -4,22 +4,22 @@
 const projects = [
     {
         title: 'Lottery Scheduling Implementation for FreeRTOS',
-        description: 'Explored the complexities of embedded systems and developed a FreeRTOS Lottery Scheduler for Arm Cortex-M3 on QEMU, enhancing scheduling capabilities beyond default implementations.',
-        url_report: 'projects/FreeRTOS_Lottery_Scheduling.pdf',
+        description: 'Explored the complexities of embedded systems by developing a custom FreeRTOS Lottery Scheduler for Arm Cortex-M3 on QEMU, enhancing scheduling capabilities beyond default implementations.',
+        url_report: 'files/master/FreeRTOS_Lottery_Scheduling.pdf',
         url_code: 'https://github.com/coduri/FreeRTOS_LotteryScheduling',
         tags: ['C', 'embedded-system']
     },
     {
-        title: 'DDoS Attacks Detection and Characterization',
-        description: 'Analyzing a dataset for benign and DDoS attacks, involving data exploration, supervised and unsuper- vised learning, and cluster explainability analysis.',
-        url_report: 'projects/DDoS_Attacks_Detection_and_Characterization.pdf',
+        title: 'DDoS Attacks Detection with Machine Learning',
+        description: 'Analyzed a dataset of benign and malicious packets, applying both supervised and unsupervised learning techniques, along with cluster explainability analysis, to detect DDoS attacks.',
+        url_report: 'files/master/DDoS_Attacks_Detection_and_Characterization.pdf',
         url_code: 'https://github.com/coduri/ML_DDoS_Detection',
         tags: ['Python', 'machine-learning']
     },
     {
         title: 'GNSS Signals Analysis and Spoofing Experiments',
-        "description": "Examination of two datasets to understand GNSS signal behavior, identify interference issues, and explore potential vulnerabilities such as spoofed positions and signal delay attacks.",
-        url_report: 'projects/GNSS_Spoofing.pdf',
+        "description": "Investigated GNSS signal behavior by analyzing two datasets, identifying interference patterns, and assessing vulnerabilities such as spoofed positions and signal delay attacks.",
+        url_report: 'files/master/GNSS_Spoofing.pdf',
         url_code: null,
         tags: ['MATLAB', 'wireless-security']
     },
@@ -66,11 +66,11 @@ $(document).ready(function() {
             cardHTML +=' <a href="' + project.url_code + '" target="_blank" class="btn btn-secondary btn-sm btn-block mt-2">View the code</a>'
 
         cardHTML += '</div></div><hr>' +
-                    '<div class="tags mt-auto">' + tagsHTML + '</div>' +
+            '<div class="tags mt-auto">' + tagsHTML + '</div>' +
 
-                    '</div>' +
-                    '</div>' +
-                    '</div>'
+            '</div>' +
+            '</div>' +
+            '</div>'
 
         $('#project-cards').append(cardHTML)
     })
@@ -94,11 +94,11 @@ $(document).ready(function() {
 
         if(filterValue == 'all') {
             // Show all projects if "All" is clicked
-            $('#project-cards .project-card').show(400)
+            $('#project-cards .project-card').show(300)
         }
         else {
             // Show selected projects and then hide the others
-            $('#project-cards .project-card').filter('.' + filterValue).show(400, function(){
+            $('#project-cards .project-card').filter('.' + filterValue).show(300, function(){
                 $('#project-cards .project-card').not('.' + filterValue).hide(300)
             })
 
