@@ -51,43 +51,45 @@
 
 
 <!-- Research Section-->
-<section class="page-section mb-0" id="research" style="padding-bottom: 0;">
+<!-- Research Section-->
+<section class="page-section mb-2" id="research" style="padding-bottom: 0;">
     <div class="container">
-        <h2 class="page-section-heading text-center text-secondary mb-0">Research</h2>
-        <div class="divider-custom divider-secondary">
-            <div class="divider-custom-line"></div>
-        </div>
-
-        <div class="row justify-content-center">
-            <div class="col-lg-6">
-                <div class="card">
-                    <img src="files/bachelor/dicom_example.png" class="card-img-top" alt="DICOM Image Example" draggable="false" />
-
-                    <div class="card-body">
-                        <h5 class="card-title text-center py-2">Advanced Techniques of Visual Cryptography and Steganography for Sharing of Medical Images</h5>
-                        <p class="fs-6 text-justify">
-                            In the domain of medical data security, the confidentiality and integrity of diagnostic exam results is crucial.
-                            However, the use of DICOM files, the standard format for storing and sharing medical images like X-rays and MRIs, can pose security risks because they are not subject to encryption requirements.
-                            As a result, these files rely heavily on the security measures implemented within the healthcare institution’s networks and databases, which are often inadequate in preventing unauthorized access, data tampering, or malicious injections.
-                        </p>
-                        <p class="fs-6 text-justify">
-                            The goal of this project is to propose a secure method for sharing and storing diagnostic exam results, ensuring the confidentiality of the information while safeguarding patient privacy. The proposed solution operates directly on DICOM files, utilizing steganography and visual cryptography to protect and maintain the security of both metadata and pixel data.
-                        </p>
-                        <a class="btn btn-secondary d-flex justify-content-center mt-2">
-                            <i>Publication in Progress... (🇬🇧)</i>
-                        </a>
-                        <a href="files/bachelor/thesis.pdf" target="_blank" class="btn btn-secondary d-flex justify-content-center mt-2">
-                            Click to read the Thesis (🇮🇹)
-                        </a>
-                        <a href="https://youtu.be/bdZKIu5T2XE" target="_blank" class="btn btn-secondary d-flex justify-content-center mt-2">
-                            Watch the Thesis Presentation Video (🇮🇹)
-                        </a>
-
-                    </div>
-                </div>
+      <h2 class="page-section-heading text-center text-secondary mb-0">Research</h2>
+      <div class="divider-custom divider-secondary">
+        <div class="divider-custom-line"></div>
+      </div>
+  
+      <div class="card mb-1">
+        <div class="d-block d-md-flex">
+            <!-- Image section -->
+            <div class="d-none d-md-block" style="width: 250px; flex-shrink: 0;">
+              <img src="files/img/research/cv4health.png"
+                   class="img-fluid rounded-start h-100"
+                   style="width: 100%; object-fit: cover;" 
+                   alt="DICOM Image Example">
             </div>
-        </div>
-    </div> <!-- div container -->
+          
+            <!-- Text section -->
+            <div class="flex-grow-1">
+              <div class="card-body h-100">
+                <h5 class="card-title">A Framework for Secure Sharing of Medical Images Based on Visual Cryptography</h5>
+                <p class="card-text">
+                  <strong>Christian Coduri</strong>,
+                  <a href="https://homes.di.unimi.it/cimato/" target="_blank">Stelvio Cimato</a><br>
+                  <em>ESAS - COMPSAC</em>, 2025 (<i>Accepted</i>)
+                </p>
+                <p class="card-text">A secure method for sharing and storing diagnostic exam results in DICOM format, utilizing steganography and visual cryptography to protect both metadata and pixel data.</p>
+                <p class="card-text">
+                  <a href="" target="_blank">Paper in progress...</a> /
+                  <a href="files/bachelor/thesis.pdf" target="_blank">Original Thesis (🇮🇹)</a> /
+                  <a href="https://youtu.be/bdZKIu5T2XE" target="_blank">Thesis Presentation Video (🇮🇹)</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          
+      </div>
+    </div>
 </section>
 
 
@@ -202,6 +204,31 @@
     document.getElementById('resumeButton').addEventListener('click', function() {
         document.getElementById('resumeImage').src = 'files/img/over9000.gif';
     })
+
+    // Replace .png with .gif on hover (only once), and restore on leave
+    document.querySelectorAll('.card').forEach(card => {
+        let isGifActive = false; // track if gif is already shown
+
+        card.addEventListener('mouseenter', function () {
+            if (!isGifActive) {
+                const image = this.querySelector('img');
+                if (image && image.src.endsWith('.png')) {
+                    const imageName = image.src.split('/').pop().split('.')[0];
+                    image.src = image.src.replace(imageName + '.png', imageName + '.gif');
+                    isGifActive = true;
+                }
+            }
+        });
+
+        card.addEventListener('mouseleave', function () {
+            const image = this.querySelector('img');
+            if (image && image.src.endsWith('.gif')) {
+                const imageName = image.src.split('/').pop().split('.')[0];
+                image.src = image.src.replace(imageName + '.gif', imageName + '.png');
+                isGifActive = false;
+            }
+        });
+    });
 </script>
 </body>
 </html>
