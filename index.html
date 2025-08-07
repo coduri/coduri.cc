@@ -7,26 +7,29 @@
     <link rel="icon" type="image/x-icon" href="files/img/icon.png" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="An overview of Christian Coduri's academic research, technical projects, resume and contact information." />
+    <meta name="description" content="An overview of Christian Coduri's academic research, technical projects, publications and contact information." />
     <meta name="author" content="Christian Coduri" />
 
     <script src="https://use.fontawesome.com/releases/v6.4.2/js/all.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 </head>
+
 
 
 <body id="page-top">
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg dark-bg text-uppercase fixed-top" id="mainNav">
     <div class="container">
-        <a class="navbar-brand" href="#page-top">Christian Coduri</a>
+        <a class="navbar-brand" href="#page-top">CC</a>
         <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fas fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#research">Research</a></li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#publications">Publications</a></li>
                 <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#projects">Projects</a></li>
                 <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About Me</a></li>
             </ul>
@@ -37,24 +40,40 @@
 
 <!-- Masthead-->
 <header class="masthead bg-primary text-white text-center">
-    <div class="container d-flex align-items-center flex-column">
-        <img class="masthead-avatar mb-3" src="files/img/me.png" alt="It's me :)" draggable="false"/>
-        <h1 class="masthead-heading mb-0">Cybersecurity Student</h1>
+    <div class="container">
+        <div class="row align-items-center gx-0">
+            <!-- Image column -->
+            <div class="col-md-4 order-1 order-md-2">
+                <img class="masthead-avatar" src="files/img/me.png" alt="It's me :)" draggable="false" />
+            </div>
 
-        <div class="divider-custom divider-light">
-            <div class="divider-custom-line"></div>
+            <!-- Text column -->
+            <div class="col-md-8 order-2 order-md-1 text-center">
+                <h1 class="masthead-heading mb-2">Christian Coduri</h1>
+
+                <div class="divider-custom divider-light my-3">
+                    <div class="divider-custom-line"></div>
+                </div>
+
+                <div class="mx-auto" style="max-width: 700px;">
+                    <p class="mb-0">
+                        Ciao! I'm Christian, a Bachelor's graduate in Computer Systems and Networks Security and a 
+                        soon-to-be Master's graduate in Cybersecurity Engineering at 
+                        <a href="https://www.polito.it/en" target="_blank" class="a2">Politecnico di Torino</a>.
+                    </p>
+                </div>
+            </div>
         </div>
-
-        <p class="masthead-subheading font-weight-light mb-0">HealthTech Security Enthusiast</p>
     </div>
 </header>
 
 
-<!-- Research Section-->
-<!-- Research Section-->
-<section class="page-section mb-2" id="research" style="padding-bottom: 0;">
+
+<!-- Publications Section-->
+<section class="page-section mb-2" id="publications" style="padding-bottom: 0;">
     <div class="container">
-      <h2 class="page-section-heading text-center text-secondary mb-0">Research</h2>
+      <h2 class="page-section-heading text-center text-secondary mb-0">Publications</h2>
+      <!--<p class="text-center">[Full list of publications <a href="" target="_blank">here</a>]</p>-->
       <div class="divider-custom divider-secondary">
         <div class="divider-custom-line"></div>
       </div>
@@ -66,7 +85,8 @@
               <img src="files/img/research/cv4health.png"
                    class="img-fluid rounded-start h-100"
                    style="width: 100%; object-fit: cover;" 
-                   alt="DICOM Image Example">
+                   alt="DICOM Image Example"
+                   draggable="false">
             </div>
           
             <!-- Text section -->
@@ -74,14 +94,13 @@
               <div class="card-body h-100">
                 <h5 class="card-title">A Framework for Secure Sharing of Medical Images Based on Visual Cryptography</h5>
                 <p class="card-text">
-                  <strong>Christian Coduri</strong>,
-                  <a href="https://homes.di.unimi.it/cimato/" target="_blank">Stelvio Cimato</a><br>
-                  <em>ESAS - COMPSAC</em>, 2025 (<i>Accepted</i>)
+                  <strong>Christian Coduri</strong>, Stelvio Cimato<br>
+                  <em>ESAS - COMPSAC</em>, 2025
                 </p>
                 <p class="card-text">A secure method for sharing and storing diagnostic exam results in DICOM format, utilizing steganography and visual cryptography to protect both metadata and pixel data.</p>
                 <p class="card-text">
                   <a href="" target="_blank">Paper in progress...</a> /
-                  <a href="files/bachelor/thesis.pdf" target="_blank">Original Thesis (🇮🇹)</a> /
+                  <a href="files/bachelor/thesis.pdf" target="_blank">Bachelor Thesis (🇮🇹)</a> /
                   <a href="https://youtu.be/bdZKIu5T2XE" target="_blank">Thesis Presentation Video (🇮🇹)</a>
                 </p>
               </div>
@@ -93,27 +112,25 @@
 </section>
 
 
-<!-- Projects Section -->
+
 <section class="page-section mb-0" id="projects">
     <div class="container">
         <h2 class="page-section-heading text-center text-secondary mb-0">Projects</h2>
         <div class="divider-custom divider-secondary">
-            <div class="divider-custom-line"></div>
+        <div class="divider-custom-line"></div>
         </div>
 
-        <div class="row justify-content-center">
-            <div class="col-lg-12 text-center filter-buttons">
-                <!-- Filter Buttons will be dynamically added here -->
-            </div>
+        <!-- Swiper container -->
+        <div class="swiper my-projects-swiper mt-4">
+        <div class="swiper-wrapper" id="project-cards">
+            <!-- Slides will be injected here by JS -->
         </div>
-
-        <!-- Project Cards -->
-        <div class="row mt-4" id="project-cards">
-            <!-- Cards will be dynamically added here -->
-        </div>
-
+        
+        <div class="swiper-pagination"></div>
     </div>
+
 </section>
+
 
 
 <!-- Resume Section-->
@@ -126,7 +143,7 @@
 
         <div class="row justify-content-center">
             <div class="col-lg-6 text-center">
-                <img id="resumeImage" src="files/img/showtime.gif" class="img-fluid" alt="Showtime GIF" draggable="false">
+                <img id="resumeImage" src="files/img/showtime.gif" class="img-fluid rounded" alt="Showtime GIF" draggable="false">
             </div>
         </div>
 
@@ -136,7 +153,7 @@
                     <i class="far fa-file-pdf me-2"></i>
                     View CV
                 </a>
-                <p class="mt-2 text-white-70"><i>Last updated: April 25, 2025</i></p>
+                <p class="mt-2 text-white-70"><i>Last updated: August 3, 2025</i></p>
             </div>
         </div>
     </div>
@@ -168,11 +185,6 @@
                 <a class="btn btn-outline-light btn-social mx-1" href="https://www.instagram.com/kodugram" target="_blank">
                     <i class="fab fa-fw fa-instagram"></i>
                 </a>
-                <a class="btn btn-outline-light btn-social mx-1" href="https://x.com/coduric" target="_blank">
-                    <i class="fab fa-fw fa-x-twitter"></i>
-                </a>
-
-
             </div>
 
             <div class="col-lg-4 mb-lg-0">
@@ -185,8 +197,9 @@
 
 <!-- Copyright -->
 <div class="dark-bg py-4 text-center text-white">
-    <div class="container"><small>Copyright &copy; Christian Coduri 2024-2025</small></div>
+    <div class="container"><small>Copyright &copy; Christian Coduri 2024 - 2025</small></div>
 </div>
+
 
 
 <!-- JQuery and Bootstrap JS -->
@@ -196,6 +209,9 @@
 <!-- Component Scripts -->
 <script src="js/navbar_manager.js"></script>
 <script src="js/projects_manager.js"></script>
+
+<!-- Swiper for carousel -->
+ <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
     console.log("🔒 Heads up! Attention all code enthusiasts and potential copycats: While you're welcome to peek under the hood, remember, the full source code is available at https://github.com/coduri/coduri.cc. Happy coding!")

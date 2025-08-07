@@ -1,12 +1,25 @@
-// Custom JavaScript for filtering projects
+// projects_manager.js
 
-// Sample projects data (replace with your actual project data)
+// 1. Array of project objects
 const projects = [
     {
-        title: 'Lottery Scheduling Implementation for FreeRTOS',
+        title: 'VisualCrypto<br><br>',
+        description: 'VisualCrypto is an open-source toolkit for Visual Secret Sharing (VSS), a cryptographic method that splits an image into noise-like shares, which reveal the original only when combined.',
+        url_code: 'https://github.com/coduri/VisualCrypto',
+        tags: ['Python', 'cryptography']
+    },
+    {
+        title: 'GNSS Signals Analysis and Spoofing Experiments',
+        description: 'Investigated GNSS signal behavior by analyzing two datasets, identifying interference patterns, and assessing vulnerabilities such as spoofed positions and signal delay attacks.',
+        url_report: 'files/master/GNSS_Spoofing.pdf',
+        url_code: null,
+        tags: ['MATLAB', 'wireless-security']
+    },
+    {
+        title: 'FreeRTOS Lottery Scheduler Implementation',
         description: 'Explored the complexities of embedded systems by developing a custom FreeRTOS Lottery Scheduler for Arm Cortex-M3 on QEMU, enhancing scheduling capabilities beyond default implementations.',
         url_report: 'files/master/FreeRTOS_Lottery_Scheduling.pdf',
-        url_code: 'https://github.com/coduri/FreeRTOS_LotteryScheduling',
+        url_code: 'https://github.com/coduri/FreeRTOS-Lottery-Scheduling',
         tags: ['C', 'embedded-system']
     },
     {
@@ -15,107 +28,90 @@ const projects = [
         url_report: 'files/master/DDoS_Attacks_Detection_and_Characterization.pdf',
         url_code: 'https://github.com/coduri/ML_DDoS_Detection',
         tags: ['Python', 'machine-learning']
-    },
-    {
-        title: 'GNSS Signals Analysis and Spoofing Experiments',
-        "description": "Investigated GNSS signal behavior by analyzing two datasets, identifying interference patterns, and assessing vulnerabilities such as spoofed positions and signal delay attacks.",
-        url_report: 'files/master/GNSS_Spoofing.pdf',
-        url_code: null,
-        tags: ['MATLAB', 'wireless-security']
-    },
-]
-
-const filterButtons = [
-    {label: 'All', filter: 'all', class: 'btn-secondary'},
-    {label: 'Machine Learning', filter: 'machine-learning', class: 'btn-primary'},
-    {label: 'Embedded System', filter: 'embedded-system', class: 'btn-primary'},
-    {label: 'Wireless Security', filter: 'wireless-security', class: 'btn-primary'}
-]
-
-
+    }
+];
 
 $(document).ready(function() {
+  // 1) Inject each project as a <div class="swiper-slide">…</div> into #project-cards
+  projects.forEach(function(project) {
+    let tagsHTML = '';
+    project.tags.forEach(function(tag) {
+      tagsHTML += '<span class="badge badge-pill bg-secondary">' + tag + '</span> ';
+    });
 
-    // Add Filter Buttons to the DOM
-    const filterButtonContainer = $('.filter-buttons')
+    let cardHTML =
+      '<div class="card h-100 project-card mb-5" style="height: 319px;">' +
+        '<div class="card-body d-flex flex-column">' +
+          '<h5 class="card-title py-2">' + project.title + '</h5>' +
+          '<p class="card-text">' + project.description + '</p>' +
+          '<div class="flex-grow-1"></div>' +
+          '<div class="row">' +
+            '<div class="col-auto">'
 
-    filterButtons.forEach(function(button) {
-        const buttonHTML = '<button class="btn btn-sm justify-content-center mt-2 filter-button ' + button.class + '" data-filter="' + button.filter + '">' + button.label + '</button> '
-        filterButtonContainer.append(buttonHTML)
-    })
+                if (project.url_report)
+                  cardHTML +='<a href="' + project.url_report + '" target="_blank" class="btn btn-secondary btn-sm btn-block mt-2"><i class="fa-solid fa-book"></i>&nbsp View Report</a> '
 
-    // Add Projects Cards to the DOM
-    projects.forEach(function(project) {
-        let tagsHTML = ''
+                if (project.url_code)
+                  cardHTML +='  <a href="' + project.url_code + '" target="_blank" class="btn btn-secondary btn-sm btn-block mt-2"> <i class="fa-brands fa-github"></i>&nbsp View on GitHub</a>';
 
-        project.tags.forEach(function(tag) {
-            tagsHTML += '<span class="badge badge-pill bg-secondary">' + tag + '</span> '
-        })
-
-        let cardHTML = '<div class="col-lg-4 col-md-6 mb-4 project-card ' + project.tags.join(' ') + '">' +
-            '<div class="card h-100">' +
-            '<div class="card-body d-flex flex-column">' +                  // Align elements vertically
-            '<h5 class="card-title py-2">' + project.title + '</h5>' +
-            '<p class="card-text">' + project.description + '</p>' +
-            '<div class="flex-grow-1"></div>' +                             // Push to the bottom
-
-            '<div class="row"><div class="col-auto">' +
-            '<a href="' + project.url_report + '" target="_blank" class="btn btn-secondary btn-sm btn-block mt-2">Read the report</a>'
-
-        if (project.url_code !=null)
-            cardHTML +=' <a href="' + project.url_code + '" target="_blank" class="btn btn-secondary btn-sm btn-block mt-2">View the code</a>'
-
-        cardHTML += '</div></div><hr>' +
-            '<div class="tags mt-auto">' + tagsHTML + '</div>' +
-
+    cardHTML +=
             '</div>' +
-            '</div>' +
-            '</div>'
+          '</div>' +
+          '<hr>' +
+          '<div class="tags mt-auto">' + tagsHTML + '</div>' +
+        '</div>' +
+      '</div>';
 
-        $('#project-cards').append(cardHTML)
-    })
+    // wrap in swiper-slide
+    const slideHTML = '<div class="swiper-slide">' + cardHTML + '</div>';
+    $('#project-cards').append(slideHTML);
+  });
 
+  // 2) Equalize card heights if you still want that “max-height” behavior
+  adjustCardHeight();
 
-    // Filter buttons click event
-    $('.filter-button').click(function(){
+  // 3) Initialize Swiper once all slides are in place
+  new Swiper('.my-projects-swiper', {
+    loop: true,
+    slidesPerGroup: 1, // Move one slide at a time
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      1024: { 
+        slidesPerView: 3, 
+        spaceBetween: 24,
+        slidesPerGroup: 1  // Move one at a time on desktop
+      },
+      768: { 
+        slidesPerView: 2, 
+        spaceBetween: 16,
+        slidesPerGroup: 1  // Move one at a time on tablet
+      },
+      0: { 
+        slidesPerView: 1, 
+        spaceBetween: 8,
+        slidesPerGroup: 1  // Move one at a time on mobile
+      }
+    }
+  });
 
-        // Adjust cards height after filtering
-        adjustCardHeight()
+});
 
-        // Old filter button
-        $('.filter-button').removeClass('btn-secondary')
-        $('.filter-button').addClass('btn-primary')
-
-        // Clicked filter button
-        $(this).removeClass('btn-primary')
-        $(this).addClass('btn-secondary')
-
-        const filterValue = $(this).attr('data-filter')
-
-        if(filterValue == 'all') {
-            // Show all projects if "All" is clicked
-            $('#project-cards .project-card').show(300)
-        }
-        else {
-            // Show selected projects and then hide the others
-            $('#project-cards .project-card').filter('.' + filterValue).show(300, function(){
-                $('#project-cards .project-card').not('.' + filterValue).hide(300)
-            })
-
-        }
-    })
-})
-
-// Adjust the height of all project cards to match the height of the tallest card
+// Helper to make every .project-card the same height
 function adjustCardHeight() {
-    let maxHeight = 0
-
-    // Find the tallest one
-    $('#project-cards .project-card').each(function() {
-        const cardHeight = $(this).height()
-        maxHeight = Math.max(maxHeight, cardHeight)
-    })
-
-    // Set the height of all project cards to match the height of the tallest card
-    $('#project-cards .project-card').height(maxHeight)
+  let maxH = 0;
+  $('.swiper-slide .project-card').each(function() {
+    const h = $(this).height();
+    if (h > maxH) {
+      maxH = h;
+    }
+  });
+  $('.swiper-slide .project-card').height(maxH);
 }
