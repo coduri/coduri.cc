@@ -254,11 +254,11 @@ a:hover {
 }
 
 .a2 {
-  color: var(--bs-black);  
+  color: #2c3e50;  
   text-decoration: none;
 }
 .a2:hover {
-  color: var(--bs-gray-900);
+  color: #1a252f;
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
