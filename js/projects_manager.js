@@ -5,6 +5,7 @@ const projects = [
     {
         title: 'VisualCrypto<br><br>',
         description: 'VisualCrypto is an open-source toolkit for Visual Secret Sharing (VSS), a cryptographic method that splits an image into noise-like shares, which reveal the original only when combined.',
+        url_report: 'https://coduri.github.io/VisualCrypto/',
         url_code: 'https://github.com/coduri/VisualCrypto',
         tags: ['Python', 'cryptography']
     },
@@ -49,10 +50,10 @@ $(document).ready(function() {
             '<div class="col-auto">'
 
                 if (project.url_report)
-                  cardHTML +='<a href="' + project.url_report + '" target="_blank" class="btn btn-secondary btn-sm btn-block mt-2"><i class="fa-solid fa-book"></i>&nbsp View Report</a> '
+                  cardHTML +='<a href="' + project.url_report + '" target="_blank" class="btn btn-secondary btn-sm btn-block mt-2"><i class="fa-solid fa-file-lines me-2"></i>Report</a> '
 
                 if (project.url_code)
-                  cardHTML +='  <a href="' + project.url_code + '" target="_blank" class="btn btn-secondary btn-sm btn-block mt-2"> <i class="fa-brands fa-github"></i>&nbsp View on GitHub</a>';
+                  cardHTML +='  <a href="' + project.url_code + '" target="_blank" class="btn btn-secondary btn-sm btn-block mt-2"> <i class="fa-brands fa-github me-2"></i>GitHub</a>';
 
     cardHTML +=
             '</div>' +
