@@ -84,129 +84,10 @@
             <div class="divider-custom-line"></div>
         </div>
   
-        <div class="card mb-4">
-            <div class="card-body">
-                <h5 class="card-title">Formal Verification and Mitigation of Vulnerabilities in the IMDGuard Protocol</h5>
-                <p class="mb-1">
-                    <strong>Christian Coduri</strong>, Alessio Sacco, Guido Marchetto, Riccardo Sisto<br>
-                    <em>PerCom</em>, 2026
-                </p>
-                <p class="mb-2">
-                    Formal analysis of IMDGuard reveals authentication weaknesses and proposes mitigations to secure IMD communications.
-                </p>
-
-                <p>
-                    <a class="btn btn-outline-secondary btn-sm btn-block mt-2 me-2" data-bs-toggle="collapse" href="#pub-imdguard-abstract" role="button" aria-expanded="false" aria-controls="pub-imdguard-abstract">
-                        <i class="fa-solid fa-file-lines me-2"></i>Abstract
-                    </a>
-
-                    <a class="btn btn-secondary btn-sm btn-block mt-2" href="https://ieeexplore.ieee.org/document/11585400" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-solid fa-book me-2"></i>Paper
-                    </a>
-                </p>
-
-                <div class="collapse mt-3" id="pub-imdguard-abstract">
-                    <div class="card card-body">
-                        <div class="row align-items-center">
-                            <div class="col-12 col-md-8">
-                                <p style="margin-bottom: 0;">
-                                    IMDGuard is a proxy-based authentication protocol
-                                    designed to secure communications between an Implantable
-                                    Medical Device (IMD), a technology increasingly used in cardiac
-                                    care, and its associated Programmer device through a wearable
-                                    third-party mediator known as the Guardian. In this paper, we
-                                    formally analyze the security of IMDGuard using the ProVerif
-                                    verification tool and demonstrate that the protocol is vulnerable
-                                    to multiple attacks. Our analysis confirms a known susceptibility
-                                    to denial-of-service attacks and reveals a previously unreported
-                                    flaw in the authentication mechanism between the Guardian
-                                    and the Programmer. This vulnerability allows an adversary to
-                                    impersonate the IMD, inject falsified telemetry data, and issue
-                                    deceptive responses to legitimate Programmer commands, posing
-                                    a serious risk to patient safety by potentially leading clinicians
-                                    to make medical decisions based on compromised information.
-                                    To mitigate this threat, we propose a remediation mechanism
-                                    that enforces the mutual authentication process, thereby enhancing protocol 
-                                    resilience against impersonation attacks. The
-                                    proposed improvements restore the intended security guarantees
-                                    of IMDGuard, ensuring safer and more reliable communication
-                                    in cardiac care applications.
-                                </p>
-                            </div>
-                            <div class="col-12 col-md-4 text-md-end">
-                                <img src="files/img/research/IMDGuard.png" class="img-fluid float-md-end" alt="IMDGuard Protocol" draggable="false" style="max-width:100%; max-height:220px; object-fit:contain; border-radius:0;">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <hr class="my-3">
-                <p class="mb-2"><strong>Additional information:</strong> This work was also presented in a talk at <a href="#talk-pacemakers">milan0day 2026</a>.</p>
-            </div>
+        <div id="publication-cards">
+            <!-- Publication cards will be injected here by JS -->
         </div>
-
-        
-
-        <div class="card mb-4">
-            <div class="card-body">
-                <h5 class="card-title">A Framework for Secure Sharing of Medical Images Based on Visual Cryptography</h5>
-                <p class="mb-1">
-                    <strong>Christian Coduri</strong>, Stelvio Cimato<br>
-                    <em>COMPSAC</em>, 2025
-                </p>
-                <p class="mb-2">A secure method for sharing and storing diagnostic exam results in DICOM format, utilizing steganography and visual cryptography to protect both metadata and pixel data.</p>
-
-                <p>
-                    <a class="btn btn-outline-secondary btn-sm btn-block mt-2 me-2" data-bs-toggle="collapse" href="#pub-vc-abstract" role="button" aria-expanded="false" aria-controls="pub-vc-abstract">
-                        <i class="fa-solid fa-file-lines me-2"></i>Abstract
-                    </a>
-
-                    <a class="btn btn-secondary btn-sm btn-block mt-2" href="https://ieeexplore.ieee.org/abstract/document/11126687/" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-solid fa-book me-2"></i>Paper
-                    </a>
-                </p>
-
-                <div class="collapse mt-3" id="pub-vc-abstract">
-                    <div class="card card-body">
-                        <div class="row align-items-center">
-                            <div class="col-12 col-md-8">
-                                <p style="margin-bottom: 0;">
-                                    In the domain of medical data security, the confidentiality and 
-                                    integrity of diagnostic exam results is crucial. However, the use of DICOM files, 
-                                    the standard format for storing and sharing medical images like X-rays and MRIs, 
-                                    can pose security risks because they are not subject to encryption requirements. 
-                                    As a result, these files rely heavily on the security measures implemented within the 
-                                    healthcare institution's networks and databases, which are often inadequate in preventing 
-                                    unauthorized access, data tampering, or malicious injections. The goal of this paper is 
-                                    to propose a secure method for sharing and storing diagnostic exam results, ensuring 
-                                    the confidentiality of the information while safeguarding patient privacy. The proposed 
-                                    solution operates directly on DICOM files, utilizing steganography and visual secret sharing 
-                                    to protect and maintain the security of both metadata and pixel data.
-                                </p>
-                            </div>
-                            <div class="col-12 col-md-4 text-md-end">
-                                <img src="files/img/research/cv4health.gif" class="img-fluid float-md-end" alt="Example of VC" draggable="false" style="max-width:100%; max-height:220px; object-fit:contain; border-radius:0;">
-                            </div>
-                        </div>
-                    </div>
-                    <hr class="my-3">
-                </div>
-
-                <p class="mb-2"><strong>Additional information:</strong> 
-                    This work was derived from my Bachelor's thesis.</p>
-                <p>
-                    <a class="btn btn-outline-secondary btn-sm btn-block mt-2" href="https://www.decifris.it/attivita/centotesi-2017-2024" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-solid fa-award me-2"></i>Top 100 Italian cryptography theses (2017-2024)
-                    </a>
-                    <a class="btn btn-outline-secondary btn-sm btn-block mt-2 me-2" href="files/bachelor/thesis.pdf" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-regular fa-file-pdf me-2"></i>Thesis (ITA)
-                    </a>
-
-                    <a class="btn btn-outline-secondary btn-sm btn-block mt-2 me-2" href="https://youtu.be/bdZKIu5T2XE" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-youtube me-2"></i>Recording (ITA)
-                    </a>
-                </p>
-            </div>
-        </div>
+    </div>
 </section>
 
 <!-- Talks Section -->
@@ -217,36 +98,8 @@
             <div class="divider-custom-line"></div>
         </div>
 
-        <div id="talk-pacemakers" class="card mb-3">
-            <div class="card-body">
-                <small class="text-muted">May 21st, 2026</small>
-                <p class="mb-3"><a href="https://k1nd4sus.it/events/milan0day2026" target="_blank" rel="noopener noreferrer">milan0day 2026</a></p>
-                <h5 class="card-title mt-3">Breaking Pacemaker Authentication with Formal Methods</h5>
-                <p class="card-text">A talk on how formal verification (using ProVerif) can uncover subtle authentication flaws in implantable medical device protocols.</p>
-
-                <p>
-                    <a class="btn btn-outline-secondary btn-sm btn-block mt-2 me-2" data-bs-toggle="collapse" href="#talk1-abstract" role="button" aria-expanded="false" aria-controls="talk1-abstract">
-                        <i class="fa-solid fa-file-lines me-2"></i>Abstract
-                    </a>
-                    <a class="btn btn-secondary btn-sm btn-block mt-2" href="https://www.youtube.com/live/vGBYtNop6II?si=_EOR9NEZZX9MyDy_&t=6163" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-youtube me-2"></i>Recording
-                    </a>
-                    <a class="btn btn-secondary btn-sm btn-block mt-2 me-2" href="files/talks/milan0day2026.pdf" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-solid fa-file-powerpoint me-2"></i>Slides
-                    </a>
-                </p>
-
-                <div class="collapse mt-3" id="talk1-abstract">
-                    <div class="card card-body">
-                        <p style="margin-bottom: 0;">
-                            Implantable medical devices such as pacemakers are wireless, networked computers embedded in the human body. Like any connected system, they rely on authentication and access control protocols to determine who can communicate with them and under what conditions.
-                            This talk begins with an overview of the main security architectures proposed in the medical device literature, including proximity-based schemes, biometric authentication, proxy-based guardians, and hybrid designs. We examine how they work, their security guarantees, and the assumptions on which they depend.
-                            From there, we shift to a security engineer's perspective. What happens when we stop trusting the design and formally verify it? Using ProVerif, we demonstrate how security protocols can be modeled, how adversarial capabilities are defined, and how formal verification tools can uncover attack paths beyond human intuition.
-                            Finally, we present the formal analysis of a widely known implantable device protocol. Our verification reveals a subtle authentication flaw that enables session key forgery and device impersonation without breaking any cryptographic primitive. The math holds. The logic doesn't.
-                        </p>
-                    </div>
-                </div>
-            </div>
+        <div id="talk-cards">
+            <!-- Talk cards will be injected here by JS -->
         </div>
     </div>
 </section>
@@ -266,7 +119,6 @@
         
         <div class="swiper-pagination"></div>
     </div>
-
 </section>
 
 
@@ -290,7 +142,7 @@
                     <i class="far fa-file-pdf me-2"></i>
                     View CV
                 </a>
-                <p class="mt-2 text-white-70"><i>Last updated: July 14, 2026</i></p>
+                <p class="mt-2 text-white-70"><i>Last updated: July 31, 2026</i></p>
             </div>
         </div>
     </div>
@@ -347,6 +199,8 @@
 
 <!-- Component Scripts -->
 <script src="js/navbar_manager.js"></script>
+<script src="js/publications_manager.js"></script>
+<script src="js/talk_manager.js"></script>
 <script src="js/projects_manager.js"></script>
 
 <!-- Swiper for carousel -->
@@ -359,8 +213,6 @@
     document.getElementById('resumeButton').addEventListener('click', function() {
         document.getElementById('resumeImage').src = 'files/img/over9000.gif';
     })
-
-    // (Removed hover-to-activate GIF behavior; GIFs now load directly)
 </script>
 </body>
 </html>

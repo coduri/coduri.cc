@@ -1,6 +1,6 @@
 // projects_manager.js
 
-// 1. Array of project objects
+// Array of project objects
 const projects = [
     {
         title: 'VisualCrypto<br><br>',
