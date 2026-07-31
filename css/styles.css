@@ -4237,6 +4237,10 @@ textarea.form-control-lg {
   margin-bottom: 0;
 }
 
+.card-text {
+  text-align: justify;
+}
+
 .card-text:last-child {
   margin-bottom: 0;
 }

@@ -51,7 +51,7 @@ $(document).ready(function() {
                     '<p>' + buttonsHTML + '</p>' +
                     '<div class="collapse mt-3" id="' + abstractId + '">' +
                         '<div class="card card-body">' +
-                            '<p class="mb-0">' + talk.abstract + '</p>' +
+                            '<p class="mb-0 card-text">' + talk.abstract + '</p>' +
                         '</div>' +
                     '</div>' +
                 '</div>' +
