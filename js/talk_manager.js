@@ -19,7 +19,9 @@ const talks = [
     }
 ];
 
-$(document).ready(function() {
+window.addEventListener('DOMContentLoaded', function() {
+    const talkCards = document.getElementById('talk-cards');
+
     talks.forEach(function(talk) {
         const abstractId = talk.abstractId;
         let buttonsHTML =
@@ -57,6 +59,6 @@ $(document).ready(function() {
                 '</div>' +
             '</div>';
 
-        $('#talk-cards').append(talkHTML);
+        talkCards.insertAdjacentHTML('beforeend', talkHTML);
     });
 });

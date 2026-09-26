@@ -52,7 +52,9 @@ const publications = [
     }
 ];
 
-$(document).ready(function() {
+window.addEventListener('DOMContentLoaded', function() {
+    const publicationCards = document.getElementById('publication-cards');
+
     publications.forEach(function(publication) {
         const abstractId = 'pub-' + publication.id + '-abstract';
         let imageHTML = '';
@@ -62,7 +64,7 @@ $(document).ready(function() {
             abstractColumnClass = 'col-12 col-lg';
             imageHTML =
                 '<div class="col-12 col-lg-auto mt-3 mt-lg-0 publication-abstract-image-container">' +
-                    '<img src="' + publication.abstractImage.src + '" class="img-fluid publication-abstract-image" alt="' + publication.abstractImage.alt + '" draggable="false">' +
+                    '<img src="' + publication.abstractImage.src + '" class="img-fluid publication-abstract-image" alt="' + publication.abstractImage.alt + '" loading="lazy" draggable="false">' +
                 '</div>';
         }
 
@@ -102,6 +104,6 @@ $(document).ready(function() {
                 '</div>' +
             '</div>';
 
-        $('#publication-cards').append(publicationHTML);
+        publicationCards.insertAdjacentHTML('beforeend', publicationHTML);
     });
 });

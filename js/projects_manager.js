@@ -3,7 +3,7 @@
 // Array of project objects
 const projects = [
     {
-        title: 'VisualCrypto<br><br>',
+        title: 'VisualCrypto',
         description: 'VisualCrypto is an open-source toolkit for Visual Secret Sharing (VSS), a cryptographic method that splits an image into noise-like shares, which reveal the original only when combined.',
         url_report: 'https://coduri.github.io/VisualCrypto/',
         url_code: 'https://github.com/coduri/VisualCrypto',
@@ -32,8 +32,9 @@ const projects = [
     }
 ];
 
-$(document).ready(function() {
-  // 1) Inject each project as a <div class="swiper-slide">…</div> into #project-cards
+window.addEventListener('DOMContentLoaded', function() {
+  const projectCards = document.getElementById('project-cards');
+
   projects.forEach(function(project) {
     let tagsHTML = '';
     project.tags.forEach(function(tag) {
@@ -41,7 +42,7 @@ $(document).ready(function() {
     });
 
     let cardHTML =
-      '<div class="card h-100 project-card mb-5" style="height: 319px;">' +
+      '<div class="card h-100 project-card">' +
         '<div class="card-body d-flex flex-column">' +
           '<h5 class="card-title py-2">' + project.title + '</h5>' +
           '<p class="card-text">' + project.description + '</p>' +
@@ -49,11 +50,13 @@ $(document).ready(function() {
           '<div class="row">' +
             '<div class="col-auto">'
 
-                if (project.url_report)
-                  cardHTML +='<a href="' + project.url_report + '" target="_blank" class="btn btn-secondary btn-sm btn-block mt-2"><i class="fa-solid fa-file-lines me-2"></i>Report</a> '
+                if (project.url_report) {
+                  cardHTML += '<a href="' + project.url_report + '" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm btn-block mt-2"><i class="fa-solid fa-file-lines me-2" aria-hidden="true"></i>Report</a> ';
+                }
 
-                if (project.url_code)
-                  cardHTML +='  <a href="' + project.url_code + '" target="_blank" class="btn btn-secondary btn-sm btn-block mt-2"> <i class="fa-brands fa-github me-2"></i>GitHub</a>';
+                if (project.url_code) {
+                  cardHTML += '<a href="' + project.url_code + '" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm btn-block mt-2"><i class="fa-brands fa-github me-2" aria-hidden="true"></i>GitHub</a>';
+                }
 
     cardHTML +=
             '</div>' +
@@ -63,19 +66,14 @@ $(document).ready(function() {
         '</div>' +
       '</div>';
 
-    // wrap in swiper-slide
     const slideHTML = '<div class="swiper-slide">' + cardHTML + '</div>';
-    $('#project-cards').append(slideHTML);
+    projectCards.insertAdjacentHTML('beforeend', slideHTML);
   });
 
-  // 2) Equalize card heights if you still want that “max-height” behavior
-  adjustCardHeight();
-
-  // 3) Initialize Swiper once all slides are in place
   new Swiper('.my-projects-swiper', {
     loop: true,
-    slidesPerGroup: 1, // Move one slide at a time
-    autoplay: {
+    slidesPerGroup: 1,
+    autoplay: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? false : {
       delay: 3000,
       disableOnInteraction: false,
       pauseOnMouseEnter: true
@@ -88,31 +86,18 @@ $(document).ready(function() {
       1024: { 
         slidesPerView: 3, 
         spaceBetween: 24,
-        slidesPerGroup: 1  // Move one at a time on desktop
+        slidesPerGroup: 1
       },
       768: { 
         slidesPerView: 2, 
         spaceBetween: 16,
-        slidesPerGroup: 1  // Move one at a time on tablet
+        slidesPerGroup: 1
       },
       0: { 
         slidesPerView: 1, 
         spaceBetween: 8,
-        slidesPerGroup: 1  // Move one at a time on mobile
+        slidesPerGroup: 1
       }
     }
   });
-
 });
-
-// Helper to make every .project-card the same height
-function adjustCardHeight() {
-  let maxH = 0;
-  $('.swiper-slide .project-card').each(function() {
-    const h = $(this).height();
-    if (h > maxH) {
-      maxH = h;
-    }
-  });
-  $('.swiper-slide .project-card').height(maxH);
-}

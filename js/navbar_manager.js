@@ -44,10 +44,10 @@ window.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('#navbarResponsive .nav-link')
     )
 
-    responsiveNavItems.map(function (responsiveNavItem) {
+    responsiveNavItems.forEach(function (responsiveNavItem) {
         responsiveNavItem.addEventListener('click', () => {
 
-            if (window.getComputedStyle(navbarToggler).display !== 'none')
+            if (navbarToggler && window.getComputedStyle(navbarToggler).display !== 'none')
                 navbarToggler.click()
         })
     })
